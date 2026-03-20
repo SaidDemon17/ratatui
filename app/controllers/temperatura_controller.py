@@ -38,5 +38,5 @@ def obtener_datos():
                 rata[i] = rata[j]
                 rata[j] = aux
     return {
-        "datos": datos+rata
+        "datos": datos,rata
     }
