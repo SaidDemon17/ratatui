@@ -29,14 +29,13 @@ def obtener_datos():
     conn.close()
 
     datos = [{"id": r[0], "valor": r[1]} for r in rows]
-
-    rata = [3,4,23,32]
-    for i in range(len(rata) - 1):
-        for j in range(i + 1, len(rata)):
-            if rata[i] < rata[j]:
-                aux = rata[i]
-                rata[i] = rata[j]
-                rata[j] = aux
+    n=len(datos)
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            if datos[i]["valor"] < datos[j]["valor"]:
+                aux = datos[i]
+                datos[i] = datos[j]
+                datos[j] = aux
     return {
-        "datos": datos,rata
+        "datos": datos
     }
