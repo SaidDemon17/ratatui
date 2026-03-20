@@ -31,13 +31,12 @@ def obtener_datos():
     datos = [{"id": r[0], "valor": r[1]} for r in rows]
 
     rata = [3,4,23,32]
-    for i in range(len(dato) - 1):
-        for j in range(i + 1, len(dato)):
-            if dato[i] < dato[j]:
-                aux = dato[i]
-                dato[i] = dato[j]
-                dato[j] = aux
+    for i in range(len(rata) - 1):
+        for j in range(i + 1, len(rata)):
+            if rata[i] < rata[j]:
+                aux = rata[i]
+                rata[i] = rata[j]
+                rata[j] = aux
     return {
-        "datos": datos, 
-        "alumno": rata
+        "datos": datos+rata
     }
