@@ -29,13 +29,17 @@ def obtener_datos():
     conn.close()
 
     datos = [{"id": r[0], "valor": r[1]} for r in rows]
-    n=len(datos)
+
+    n = len(datos)
+
+    # Ordenar (ej: mayor a menor)
     for i in range(n - 1):
         for j in range(i + 1, n):
             if datos[i]["valor"] < datos[j]["valor"]:
                 aux = datos[i]
                 datos[i] = datos[j]
                 datos[j] = aux
+
     return {
         "datos": datos
     }
