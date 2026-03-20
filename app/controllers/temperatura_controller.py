@@ -30,4 +30,11 @@ def obtener_datos():
 
     datos = [{"id": r[0], "valor": r[1]} for r in rows]
 
-    return {"datos": datos, "alumno": "Jorge"}
+    dato= [3,4,23,32]
+    for i in range (len(dato)-1):
+        for j in range (i+1,len(dato)):
+            if dato[i]<dato[j]:
+                aux=dato[i]
+                dato[i]=dato[j]
+                dato[j]=aux
+    return {"datos": datos, "alumno":dato}
